@@ -1,0 +1,9 @@
+<h1 mat-dialog-title> Payment :{{data.price|currency:'INR'}}
+  <mat-icon style="cursor: pointer;float: right;" (click)="close()">close</mat-icon>
+</h1>
+<div mat-dialog-content>
+  <div style="text-align: center" class="m-t-10">
+    <button mat-raised-button color="primary" type="button" (click)="pay()">Pay now</button>
+    <button mat-raised-button color="primary" type="button" (click)="close()">Cancel</button>
+  </div>
+</div>

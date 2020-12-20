@@ -1,0 +1,5 @@
+<div class="mustafa-loader" *ngIf="IsHttpCall">
+  <mat-spinner id="loader"></mat-spinner>
+</div>
+
+<mat-progress-bar mode="indeterminate" *ngIf="isSpinnerVisible"></mat-progress-bar>

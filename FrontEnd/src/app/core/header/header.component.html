@@ -1,0 +1,31 @@
+<mat-toolbar class="main-header" color="primary">
+  <button (click)="toggleSidenav.emit()" mat-icon-button>
+    <mat-icon>menu</mat-icon>
+  </button>
+  <div class="branding">
+    <div class="logo"></div>
+  </div>
+  <div fxFlex>
+  </div>
+  <button (click)="fullScreenToggle()" mat-icon-button>
+    <mat-icon>fullscreen</mat-icon>
+  </button>
+  <a [routerLink]="['/cart']" *ngIf="isLoggedIn" mat-icon-button class="overflow-visible">
+    <mat-icon>shopping_cart</mat-icon>
+    <!-- <span class="notification-label">5</span> -->
+  </a>
+  <button [matMenuTriggerFor]="user" mat-icon-button class="ml-xs">
+    <mat-icon>person</mat-icon>
+  </button>
+  <mat-menu #user="matMenu" x-position="before">
+    <button mat-menu-item (click)="logout()" *ngIf="isLoggedIn">
+      <mat-icon>exit_to_app</mat-icon>
+      Sign Out
+    </button>
+    <a mat-menu-item [routerLink]="['/session/signin']" *ngIf="!isLoggedIn">
+      <mat-icon>login</mat-icon>
+      Sign In
+    </a>
+
+  </mat-menu>
+</mat-toolbar>
